@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_cabang');
+            $table->bigInteger('id_cabang')->unsigned();
             $table->date('tanggal_transaksi');
             $table->string('jenis_transaksi');
-            $table->integer('id_produk')->unsigned();
+            $table->bigInteger('id_produk')->unsigned();
             $table->integer('jmlh_produk');
             $table->decimal('harga_produk', 10, 2);
             $table->timestamps();
         
-            $table->foreign('id_cabang')->references('id_cabang')->on('cabangs')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_produk')->references('id_produk')->on('produks')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_cabang')->references('id')->on('cabangs')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_produk')->references('id')->on('produks')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

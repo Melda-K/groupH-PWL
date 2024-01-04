@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nama_barang');
             $table->string('kategori');
-            $table->decimal('harga', 10, 2);
-            $table->string('satuan_barang');
             $table->timestamps();
         });
     }
