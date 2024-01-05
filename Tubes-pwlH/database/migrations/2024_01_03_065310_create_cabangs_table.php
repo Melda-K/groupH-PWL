@@ -12,9 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cabangs', function (Blueprint $table) {
-            $table->id()->unsigned();
-            $table->string('nama_cabang');
-            $table->string('alamat');
+            $table->id();
+            $table->bigInteger('id_manajer')->unsigned();
+            $table->foreign('id_manajer')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('nama_cabang', 255);
+            $table->text('alamat');
+            $table->bigInteger('id_supervisor')->unsigned();
+            $table->foreign('id_supervisor')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('id_kasir')->unsigned();
+            $table->foreign('id_kasir')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('id_gudang')->unsigned();
+            $table->foreign('id_gudang')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
