@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ProdukSeeder extends Seeder
 {
@@ -12,41 +13,77 @@ class ProdukSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('produk')->insert(
+        DB::table('produks')->insert(
             [
                 [
-                    'jenis produk' => 'Sidu',
-                    'id_kategori' => 1,
+                    'jenis_produk' => 'Sidu',
+                    'id_kategori' => '1',
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
                 [
-                    'jenis produk' => 'Joyko',
-                    'id_kategori' => 2,
+                    'jenis_produk' => 'Joyko',
+                    'id_kategori' => '1',
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
                 [
-                    'jenis produk' => 'Faber Castell',
-                    'id_kategori' => 3,
+                    'jenis_produk' => 'Faber Castell',
+                    'id_kategori' => '1',
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
                 [
-                    'jenis produk' => 'Ultra',
-                    'id_kategori' => 4,
+                    'jenis_produk' => 'Ultra',
+                    'id_kategori' => '2',
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
                 [
-                    'jenis produk' => 'Cimory',
-                    'id_kategori' => 5,
+                    'jenis_produk' => 'Cimory',
+                    'id_kategori' => '2',
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
                 [
-                    'jenis produk' => 'Kanzler',
-                    'id_kategori' => 6,
+                    'jenis_produk' => 'Kanzler',
+                    'id_kategori' => '3',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'jenis_produk' => 'Qitela',
+                    'id_kategori' => '3',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'jenis_produk' => 'Mie',
+                    'id_kategori' => '3',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'jenis_produk' => 'Ladaku',
+                    'id_kategori' => '4',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'jenis_produk' => 'Nuvo',
+                    'id_kategori' => '5',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'jenis_produk' => 'Zinc',
+                    'id_kategori' => '5',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'jenis_produk' => 'Pepsodent',
+                    'id_kategori' => '5',
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],

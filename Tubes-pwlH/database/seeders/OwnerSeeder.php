@@ -8,14 +8,14 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 
-class AdminSeeder extends Seeder
+class OwnerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Role::create(['name' => 'admin', 'guard_name' => 'web']);
+        Role::create(['name' => 'owner', 'guard_name' => 'web']);
 
         $user = User::create([
             'name' => 'Jayusman',
@@ -25,6 +25,6 @@ class AdminSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
-        $user->assignRole('admin');
+        $user->assignRole('owner');
     }
 }

@@ -15,45 +15,41 @@ class GudangSeeder extends Seeder
      */
     public function run(): void
     {
+        Role::create(['name' => 'gudang', 'guard_name' => 'web']);
+
         $dataUser = [
             [
                 'name' => 'pegawai gudang 1',
                 'email' => 'pegawai-gudang1@gmail.com',
                 'password' => Hash::make('p-gudang1'),
-                'created_at' => now(),
-                'updated_at' => now(),
+                
             ],
 
             [
                 'name' => 'pegawai gudang 2',
                 'email' => 'pegawai-gudang2@gmail.com',
                 'password' => Hash::make('p-gudang2'),
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
 
             [
                 'name' => 'pegawai gudang 3',
                 'email' => 'pegawai-gudang3@gmail.com',
                 'password' => Hash::make('p-gudang3'),
-                'created_at' => now(),
-                'updated_at' => now(),
+                
             ],
 
             [
                 'name' => 'pegawai gudang 4',
                 'email' => 'pegawai-gudang4@gmail.com',
                 'password' => Hash::make('p-gudang4'),
-                'created_at' => now(),
-                'updated_at' => now(),
+                
             ],
 
             [
                 'name' => 'pegawai gudang 5',
                 'email' => 'pegawai-gudang5@gmail.com',
                 'password' => Hash::make('p-gudang5'),
-                'created_at' => now(),
-                'updated_at' => now(),
+    
             ],
        
         ];

@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('cabangs', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_manajer')->unsigned();
-            $table->foreign('id_manajer')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('manajer_id')->unsigned();
+            $table->foreign('manajer_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nama_cabang', 255);
             $table->text('alamat');
-            $table->bigInteger('id_supervisor')->unsigned();
-            $table->foreign('id_supervisor')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->bigInteger('id_kasir')->unsigned();
-            $table->foreign('id_kasir')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->bigInteger('id_gudang')->unsigned();
-            $table->foreign('id_gudang')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('supervisor_id')->unsigned();
+            $table->foreign('supervisor_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('kasir_id')->unsigned();
+            $table->foreign('kasir_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('gudang_id')->unsigned();
+            $table->foreign('gudang_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

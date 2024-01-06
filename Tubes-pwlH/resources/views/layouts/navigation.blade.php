@@ -18,6 +18,47 @@
                 </div>
             </div>
 
+            @hasrole('owner')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('owner')" :active="request()->routeIs('owner')">
+                        {{ __('Owner') }}
+                    </x-nav-link>
+                </div>
+            @endhasrole
+            
+            @hasrole('manajer')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('manajer')" :active="request()->routeIs('manajer')">
+                        {{ __('Manager') }}
+                    </x-nav-link>
+                </div>
+            @endhasrole
+
+            @hasrole('kasir')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('kasir')" :active="request()->routeIs('kasir')">
+                        {{ __('Kasir') }}
+                    </x-nav-link>
+                </div>
+            @endhasrole
+
+            @hasrole('gudang')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('gudang')" :active="request()->routeIs('gudang')">
+                        {{ __('Gudang') }}
+                    </x-nav-link>
+                </div>
+            @endhasrole
+
+            @hasrole('supervisor')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('supervisor')" :active="request()->routeIs('supervisor')">
+                        {{ __('Supervisor') }}
+                    </x-nav-link>
+                </div>
+            @endhasrole
+
+
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">

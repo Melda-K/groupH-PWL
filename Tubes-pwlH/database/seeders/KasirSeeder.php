@@ -15,45 +15,37 @@ class KasirSeeder extends Seeder
      */
     public function run(): void
     {
+        Role::create(['name' => 'kasir', 'guard_name' => 'web']);
+
         $dataUser = [
             [
                 'name' => 'Kasir1',
                 'email' => 'kasir1@gmail.com',
                 'password' => Hash::make('kasir01'),
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
 
             [
                 'name' => 'Kasir2',
                 'email' => 'kasir2@gmail.com',
                 'password' => Hash::make('kasir02'),
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
 
             [
                 'name' => 'Kasir3',
                 'email' => 'kasir3@gmail.com',
                 'password' => Hash::make('kasir03'),
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
 
             [
                 'name' => 'Kasir4',
                 'email' => 'kasir4@gmail.com',
                 'password' => Hash::make('kasir04'),
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
 
             [
                 'name' => 'Kasir5',
                 'email' => 'kasir5@gmail.com',
                 'password' => Hash::make('kasir05'),
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
        
         ];
