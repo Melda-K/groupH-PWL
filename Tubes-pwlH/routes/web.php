@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\GudangController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\ManajerController;
@@ -7,7 +9,10 @@ use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\SupervisorController;
+use App\Http\Controllers\TransaksiController;
+use App\Models\Transaksi;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -42,5 +47,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/stok', [StokController::class, 'index'])->name('stok');
     Route::get('/supervisor', [SupervisorController::class, 'index'])->name('supervisor');
 });
+
+Route::middleware('auth')->group(function () {
+    Route::get('/user', [UserController::class, 'index'])->name('user.index');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/stok', [StokController::class, 'index'])->name('stok.index');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
+});
+
 
 require __DIR__.'/auth.php';

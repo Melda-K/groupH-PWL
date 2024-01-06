@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class StokController extends Controller
@@ -11,9 +12,9 @@ class StokController extends Controller
      */
     public function index()
     {
-        return view('stok.index');
+        $data['barangs'] = Barang::with('produk')->get();
+        return view('stok.index', $data);
     }
-
     /**
      * Show the form for creating a new resource.
      */

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('nama_barang', 255);
             $table->integer('qty');
             $table->decimal('harga', 10, 2);
-            $table->bigInteger('produk_id')->unsigned();
-            $table->foreign('produk_id')->references('id')->on('produks')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('id_produk')->unsigned();
+            $table->foreign('id_produk')->references('id')->on('produks')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

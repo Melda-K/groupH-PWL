@@ -20,11 +20,24 @@
 
             @hasrole('owner')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('owner')" :active="request()->routeIs('owner')">
-                        {{ __('Owner') }}
+                    <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                        {{ ('Data User') }}
                     </x-nav-link>
                 </div>
-            @endhasrole
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('transaksi.index')" :active="request()->routeIs('transaksi.index')">
+                        {{ ('Transaksi') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('stok.index')" :active="request()->routeIs('stok.index')">
+                        {{ __('Stok Barang') }}
+                    </x-nav-link>
+                </div>
+                @endhasrole
+
             
             @hasrole('manajer')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
