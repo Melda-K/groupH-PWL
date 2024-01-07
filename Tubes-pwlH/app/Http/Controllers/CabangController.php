@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Barang;
+use App\Models\Cabang;
 use Illuminate\Http\Request;
 
-class GudangController extends Controller
+class CabangController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data['barangs'] = Barang::with('product')->get();
-        return view('gudang.index', $data);
+        $data['cabangs'] = Cabang::with(['manajer', 'supervisor', 'kasir', 'cabang'])->get();
+        return view('cabang.index', $data);
     }
 
     /**

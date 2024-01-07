@@ -16,61 +16,33 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-            </div>
 
-            @hasrole('owner')
+                @hasrole('owner|manajer')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
-                        {{ ('Data User') }}
+                        {{ __('Data User') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('transaksi.index')" :active="request()->routeIs('transaksi.index')">
-                        {{ ('Transaksi') }}
+                        {{ __('Transaksi') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('stok.index')" :active="request()->routeIs('stok.index')">
-                        {{ __('Stok Barang') }}
+                    <x-nav-link :href="route('gudang.index')" :active="request()->routeIs('gudang.index')">
+                        {{ __('Data Gudang') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('cabang.index')" :active="request()->routeIs('cabang.index')">
+                        {{ __('Cabang') }}
                     </x-nav-link>
                 </div>
                 @endhasrole
-
-            
-            @hasrole('manajer')
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('manajer')" :active="request()->routeIs('manajer')">
-                        {{ __('Manager') }}
-                    </x-nav-link>
-                </div>
-            @endhasrole
-
-            @hasrole('kasir')
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('kasir')" :active="request()->routeIs('kasir')">
-                        {{ __('Kasir') }}
-                    </x-nav-link>
-                </div>
-            @endhasrole
-
-            @hasrole('gudang')
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('gudang')" :active="request()->routeIs('gudang')">
-                        {{ __('Gudang') }}
-                    </x-nav-link>
-                </div>
-            @endhasrole
-
-            @hasrole('supervisor')
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('supervisor')" :active="request()->routeIs('supervisor')">
-                        {{ __('Supervisor') }}
-                    </x-nav-link>
-                </div>
-            @endhasrole
-
+            </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -96,8 +68,7 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
+                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
@@ -142,8 +113,7 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                    <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
